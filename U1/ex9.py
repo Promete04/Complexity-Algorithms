@@ -1,4 +1,3 @@
-#variables
 n = int(input("Enter a number: "))
 
 def fact_sum(n):
