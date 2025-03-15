@@ -1,13 +1,3 @@
-"""Problem 6
-Mr. Scrooge has collected an old debt, receiving a bag with n gold coins. His loan shark
-nose assures him that one of them is false, but the only thing that distinguishes it from the
-others is his weight, although he does not know if it is greater or less than the rest. To find
-out which one is fake, Mr. Scrooge only has a scale with two pans to compare the weight
-of two sets of coins. In each weighing, the only thing he can observe is if the balance is
-balanced, if the objects on the right pan weigh more or if those on the left weigh more.
-Design a divide and conquer algorithm to solve Mr. Scrooge's problem (find the fake coin
-and decide if it weighs more or less than the real ones)."""
-
 def find_fake_coin(coins, start_index=0):
     n = len(coins)
     #####BASE_CASES#####
