@@ -1,17 +1,3 @@
-"""
-Given a set of paddle tennis court reservations, each with a start time and an end time,
-design an algorithm that calculates the minimum number of courts required so that all
-reservations can be carried out without schedule conflicts.
-For this purpose, we have a list of time intervals, where each interval is represented by a
-start time and an end time for the reservation
-Example:
-    Inbound: [(10, 12),(9, 11),(11, 13)] Outbound: 2.
-Explanation:
-    • The reservation from 9 to 11 occupies one track.
-    • The second reservation from 10 to 12 needs a new track because it overlaps with the first one.
-    • The third reservation from 11 to 13 can use the same track as the first one after it
-ends.
-"""
 def courts(reservations):
     n = len(reservations)
     reservations= sorted(reservations) #sort the reservations by start time
@@ -35,7 +21,7 @@ result = courts(reservations)
 print(f"Minimum number of courts required: {result}")
 
 #other example trying edge cases
-reservations = [(10, 12), (9, 23), (11, 13), (12, 14), (13, 15)]
+reservations = [(1,2),(2,9),(3,4),(5,6),(9,12),(9,12)]
 result = courts(reservations)
 print(f"Minimum number of courts required: {result}")
 
