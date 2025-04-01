@@ -43,14 +43,30 @@ def find_fake_coin(coins, start_index=0):
             else:
                 return start_index, "less"
     else:  # More than four coins, we can divide and conquer
-        mid = n // 2
-        left_coins = coins[:mid + 1]
-        right_coins = coins[mid:]
+        if n % 2 == 0: # Even number of coins
+            mid = n // 2 
+            left_coins = coins[:mid]
+            right_coins = coins[mid:]
+            if len(left_coins) % 2 == 0:
+                left_mid = len(left_coins) // 2
+                left_left_coins_weight = left_coins[:left_mid]
+                left_right_coins_weight = left_coins[left_mid:]
+            else:
+                left_mid = len(left_coins) // 2
+                left_left_coins_weight = left_coins[:left_mid+1]
+                left_right_coins_weight = left_coins[left_mid:]
 
-        left_mid = len(left_coins) // 2
-
-        left_left_coins_weight = left_coins[:left_mid]
-        left_right_coins_weight = left_coins[left_mid:]
+        else: # Odd number of coins
+            mid = n // 2
+            left_coins = coins[:mid + 1]
+            right_coins = coins[mid:]
+            left_mid = len(left_coins) // 2
+            if len(left_coins) % 2 == 0:
+                left_left_coins_weight = left_coins[:left_mid]
+                left_right_coins_weight = left_coins[left_mid:]
+            else:
+                left_left_coins_weight = left_coins[:left_mid + 1]
+                left_right_coins_weight = left_coins[left_mid:]
 
         if sum(left_left_coins_weight) == sum(left_right_coins_weight):
             return find_fake_coin(right_coins, start_index + mid)
@@ -58,7 +74,7 @@ def find_fake_coin(coins, start_index=0):
             return find_fake_coin(left_coins, start_index)
 
 # Example usage
-coins = [1, 1, 1, 1, 1,.33, 1, 1, 1, 1]  # Example coins with one fake coin (0.33)
+coins = [1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , .33, 1,1]  # Example coins with one fake coin (0.33)
 position, weight_comparison = find_fake_coin(coins)
 print(f"The fake coin is at position {position} and it weighs {weight_comparison}")
 
