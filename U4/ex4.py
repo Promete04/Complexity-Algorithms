@@ -1,4 +1,4 @@
-# Knapsack Problem
+
 def knapsack(treasure_profit, treasure_weight, max_weight_per_saddles):
     n = len(treasure_profit)
 
@@ -30,7 +30,7 @@ treasure_weight = [2,5,7,4,3,1,4,5,7,9,6,2,5,7,9,5,3,2,5,7]
 max_weight_saddles = 10
 
 # Call the knapsack function
-max_profit, K = knapsack(treasure_profit, treasure_weight, max_weight_per_saddle)
+max_profit, K = knapsack(treasure_profit, treasure_weight, max_weight_saddles)
 print("Maximum profit:", max_profit)
 # Print the matrix K ina nice format
 print("K matrix:")

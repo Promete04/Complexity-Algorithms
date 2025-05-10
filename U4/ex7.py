@@ -1,20 +1,3 @@
-"""
-A sequence of bits A is defined as a sequence A={a1, a2,..., an} where each ai can take the
-value 0 or the value 1, and n is the length of the sequence A. From a sequence it is defined
-a subsequence X of A as X = {x1, x2,..., xk}, where kn, so that X can be obtained by
-eliminating some element of A but respecting the order in which the bits appear; for
-example, if A={1,0,1,1,0,0,1} we could obtain as subsequences {1,1,1,0,1}, {1,0,1} or
-{1,1,0,0} among others, but you could never get the subsequence {1,0,0,1,1}.
-Given two sequences A and B, X is called a common subsequence of A and B when X is
-a subsequence of A and is also a subsequence of B. (although they may have been
-obtained by removing different elements in A than B, and even different quantities of
-elements). Assuming the sequences A = {0,1,1,0,1,0,1,0} and B = {1,0,1,0,0,1,0,0,1}, a
-common subsequence would be X = {1,1,0,1}, but it could not be X = {0,1,1,1,0}.
-We want to determine the common subsequence of two sequences A and B that have the
-maximum length, for which it is requested
-• explain in detail how to solve the problem, and
-• make a Dynamic Programming algorithm that obtains the maximum possible
-length and a common sequence of that length."""
 
 def find_max_shared_substring(A, B):
     # Create a 2D array to store the lengths of longest common subsequences
