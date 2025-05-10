@@ -39,7 +39,7 @@ C = 3
 posx = 0 #the board is 0-indexed
 posy = 2
 
-""" Example board:
+""" Example indexes board:
 (0,0),(0,1),(0,2)
 (1,0),(1,1),(1,2)
 (2,0),(2,1),(2,2)
