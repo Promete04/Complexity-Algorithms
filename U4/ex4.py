@@ -1,4 +1,4 @@
-
+# Knapsack Problem
 def knapsack(treasure_profit, treasure_weight, max_weight_saddles):
     n = len(treasure_profit)
 
@@ -32,10 +32,10 @@ max_weight_saddles = 10
 # Call the knapsack function
 max_profit, K = knapsack(treasure_profit, treasure_weight, max_weight_saddles)
 print("Maximum profit:", max_profit)
-# Print the matrix K in a nice format
+# Print the matrix K ina nice format
 print("K matrix:")
-for i in range(len(K)):
-    for j in range(len(K[i])):
+for i in range(1, len(K)):
+    for j in range(1, len(K[i])):
         print(f"{K[i][j]:3}", end=" ")
     print()
 
