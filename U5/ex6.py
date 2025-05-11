@@ -34,16 +34,16 @@ def backtrack_substitution(text,characterToFind, M):
     return result
 
 # Example usage
-M=[ 
-    ["_","a","b","c","d"],
-    ["a","b","b","a","d"],
-    ["b","c","a","d","a"],
-    ["c","b","a","c","c"],
-    ["d","d","c","d","b"]
+M=[
+    ['_','a','b','c','d'],
+    ['a','b','b','a','d'],
+    ['b','c','a','d','a'],
+    ['c','b','a','c','c'],
+    ['d','d','c','d','b']
   ]
 
-text = "abbababa"
-characterToFind = "d"
+text = 'abbababa'
+characterToFind = 'd'
 result= backtrack_substitution(text, characterToFind, M)
 if result:
     print(f"Yes, it is possible to reduce '{text}' to '{characterToFind}'")
