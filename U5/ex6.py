@@ -1,22 +1,4 @@
 
-"""which is used in the following way: in any string, two consecutive characters can be
-replaced by the value that appears in the table, using the first character as row and the
-second character as column. For example, you can change the sequence ca to a b, since
-M[c, a]=b.
-Implement a Backtracking algorithm that, starting from a string of text and using the
-information stored in a substitution table M, is able to find a way to make the substitutions
-that allow reducing the text string to a final character, if possible.
-Example: With the string text = acabada and the final character = d, a possible form of
-substitution is the following (the sequences that are replaced are marked for clarity):
-acabada  acacda  abcda  abcd  bcd  bc  d."""
-M=[ 
-    ["_","a","b","c","d"],
-    ["a","b","b","a","d"],
-    ["b","c","a","d","a"],
-    ["c","b","a","c","c"],
-    ["d","d","c","d","b"]
-  ]
-
 def backtrack_substitution(text,characterToFind, M):
     # Base case: if the text is reduced to a single character
     if len(text) == 1 and text[0] == characterToFind:
@@ -52,6 +34,14 @@ def backtrack_substitution(text,characterToFind, M):
     return result
 
 # Example usage
+M=[ 
+    ["_","a","b","c","d"],
+    ["a","b","b","a","d"],
+    ["b","c","a","d","a"],
+    ["c","b","a","c","c"],
+    ["d","d","c","d","b"]
+  ]
+
 text = "abbababa"
 characterToFind = "d"
 result= backtrack_substitution(text, characterToFind, M)
