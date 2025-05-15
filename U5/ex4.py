@@ -23,7 +23,7 @@ def max_knight_moves(R, C, posy, posx):
                 board[new_x][new_y] = move_count + 1 # Mark the square as visited with the move count
                 if move(new_x, new_y, move_count + 1): # Recursion to continue the path
                     return True
-                board[new_x][new_y] = 0 # Backtrack: unmark the square, as smth went wrong
+                board[new_x][new_y] = 0 # Backtrack: unmark the square to continue searching
         
         return False # If no valid moves are found, return False
     
